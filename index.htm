@@ -3,139 +3,170 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Fantasy Car Page</title>
+<title>Privacy Policy - Fantasy Car Style</title>
+
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Great+Vibes&display=swap" rel="stylesheet">
+
 <style>
-    /* Reset */
-    * {
+    body {
         margin: 0;
         padding: 0;
-        box-sizing: border-box;
-    }
-
-    body {
-        font-family: 'Poppins', sans-serif;
-        background: #000;
+        font-family: 'Marcellus', serif;
         color: #fff;
+        background: url('https://images.unsplash.com/photo-1517949908119-5f2d3c1f1d51') no-repeat center center/cover;
+        background-attachment: fixed;
         overflow-x: hidden;
     }
 
-    /* Hero Section */
-    .hero {
-        position: relative;
-        background: url('fantasy-car.jpg') center/cover no-repeat;
-        min-height: 100vh;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        text-align: center;
-    }
-
-    /* Overlay + blur */
-    .hero::before {
-        content: "";
-        position: absolute;
-        inset: 0;
-        background: rgba(0,0,0,0.3);
-        backdrop-filter: blur(1px);
-    }
-
-    /* Sparkles */
-    .sparkles {
-        position: absolute;
+    /* Overlay for readability */
+    .overlay {
+        background: rgba(0, 0, 0, 0.65);
+        position: fixed;
         top: 0;
         left: 0;
         width: 100%;
         height: 100%;
-        pointer-events: none;
-        overflow: hidden;
+        z-index: -1;
     }
 
-    .sparkles span {
-        position: absolute;
-        background: white;
-        border-radius: 50%;
-        opacity: 0.8;
-        animation: sparkle 5s linear infinite;
+    header {
+        text-align: center;
+        padding: 40px 20px 10px;
     }
 
-    @keyframes sparkle {
-        0% {
-            transform: translateY(0) scale(0);
-            opacity: 0;
-        }
-        50% {
-            opacity: 1;
-        }
-        100% {
-            transform: translateY(-100vh) scale(1);
-            opacity: 0;
-        }
+    header h1 {
+        font-family: 'Great Vibes', cursive;
+        font-size: 3.2rem;
+        color: #ffd700;
+        text-shadow: 0 0 15px #ffdd88, 0 0 30px #ffaa00;
+        animation: glow 2s ease-in-out infinite alternate;
     }
 
-    /* Content */
-    .hero-content {
-        position: relative;
-        z-index: 1;
-        padding: 2rem;
-    }
-
-    .hero-content h1 {
-        font-size: 3rem;
-        text-shadow: 0 0 15px #00e6ff;
-    }
-
-    .hero-content p {
-        font-size: 1.2rem;
-        margin: 1rem 0 2rem;
-    }
-
-    /* Button */
-    .btn {
-        display: inline-block;
-        padding: 12px 24px;
-        background: linear-gradient(45deg, #00e6ff, #ff00cc);
-        color: white;
+    header p {
+        color: #ddd;
         font-size: 1rem;
-        font-weight: bold;
-        border: none;
-        border-radius: 30px;
-        text-decoration: none;
-        box-shadow: 0 0 15px #00e6ff;
-        transition: 0.3s;
+        text-shadow: 0 0 5px rgba(0,0,0,0.5);
     }
 
-    .btn:hover {
-        transform: scale(1.1);
-        box-shadow: 0 0 25px #ff00cc;
+    @keyframes glow {
+        from { text-shadow: 0 0 15px #ffdd88, 0 0 25px #ffaa00; }
+        to { text-shadow: 0 0 25px #ffaa00, 0 0 40px #ff6600; }
+    }
+
+    .container {
+        max-width: 900px;
+        margin: 20px auto;
+        padding: 25px;
+        background: rgba(0, 0, 0, 0.7);
+        border-radius: 15px;
+        border: 1px solid rgba(255, 215, 0, 0.3);
+        box-shadow: 0 0 25px rgba(255, 215, 0, 0.2);
+        animation: fadeIn 1.5s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(20px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+
+    h2 {
+        color: #ffd700;
+        text-shadow: 0 0 8px #ffdd88;
+        border-bottom: 1px solid rgba(255, 215, 0, 0.4);
+        padding-bottom: 5px;
+        margin-top: 25px;
+    }
+
+    p, li {
+        line-height: 1.6;
+        font-size: 1.05rem;
+    }
+
+    ul {
+        margin-left: 20px;
+    }
+
+    blockquote {
+        font-style: italic;
+        border-left: 4px solid #ffd700;
+        padding-left: 15px;
+        color: #ffdd88;
+        margin: 15px 0;
+        background: rgba(255, 255, 255, 0.05);
+    }
+
+    footer {
+        text-align: center;
+        padding: 15px;
+        font-size: 0.85rem;
+        color: #ffdd88;
+        margin-top: 20px;
+        border-top: 1px solid rgba(255, 215, 0, 0.2);
     }
 </style>
 </head>
 <body>
 
-<div class="hero">
-    <div class="sparkles">
-        <!-- Sparkles generated via JS -->
-    </div>
-    <div class="hero-content">
-        <h1>Welcome to the Fantasy Car World</h1>
-        <p>Where speed meets magic ✨</p>
-        <a href="#" class="btn">Enter Garage</a>
-    </div>
+<div class="overlay"></div>
+
+<header>
+    <h1>Privacy Policy</h1>
+    <p><strong>Author:</strong> Jestin Korleski | <strong>Support Email:</strong> thegoodbookforever@gmail.com | <strong>Mobile:</strong> +1 608 931 6605</p>
+</header>
+
+<div class="container">
+    <h2>Introduction</h2>
+    <p>This page is used to inform visitors regarding our policies with the collection, use, and disclosure of Personal Information if anyone decides to use our Service.</p>
+    <p>By using our Service, you agree to the collection and use of information in accordance with this policy. The Personal Information we collect is used for providing and improving the Service. We do not use or share your information with anyone except as described in this Privacy Policy.</p>
+
+    <h2>Information Collection and Use</h2>
+    <p>For a better experience, while using our Service, we may require you to provide us with certain personally identifiable information. The information that we request will be retained by us and used as described in this privacy policy.</p>
+    <blockquote>The app does use third-party services that may collect information used to identify you.</blockquote>
+
+    <h2>Log Data</h2>
+    <p>In case of an error in the app, we collect data and information (through third-party products) on your phone called <strong>Log Data</strong>. This Log Data may include:</p>
+    <ul>
+        <li>Your device's Internet Protocol (“IP”) address</li>
+        <li>Device name</li>
+        <li>Operating system version</li>
+        <li>Configuration of the app</li>
+        <li>Time and date of your use of the Service</li>
+        <li>Other statistics</li>
+    </ul>
+
+    <h2>Your Rights and Choices</h2>
+    <p>You have certain rights in relation to your personal data:</p>
+    <ul>
+        <li><strong>The right to erasure</strong></li>
+        <li><strong>The right to restrict processing</strong></li>
+        <li><strong>The right to object to processing</strong></li>
+        <li><strong>The right to data portability</strong></li>
+    </ul>
+    <blockquote>Please note: The law provides exceptions to these rights in certain cases. If you cannot exercise one of these rights, we will explain why.</blockquote>
+
+    <p>We offer you choices regarding the collection, use, and sharing of your personal data. If you choose not to provide certain data, you may not be able to access all features of the Service.</p>
+
+    <h2>Security</h2>
+    <p>We value your trust in providing us your Personal Information and are committed to protecting it using commercially acceptable means.</p>
+    <blockquote>However, no method of transmission over the internet or electronic storage is 100% secure, and we cannot guarantee absolute security.</blockquote>
+
+    <h2>Children’s Privacy</h2>
+    <p>Our Services do <strong>not</strong> address anyone under the age of 13. We do <strong>not knowingly</strong> collect personally identifiable information from children under 13.</p>
+    <p>If we discover a child under 13 has provided us with personal information, we will immediately delete it. If you are a parent or guardian and are aware that your child has provided us with personal information, please contact us.</p>
+
+    <h2>Changes to This Privacy Policy</h2>
+    <p>We may update our Privacy Policy from time to time. You are advised to review this page periodically for any changes.</p>
+    <blockquote>Changes are effective immediately after they are posted on this page.</blockquote>
+
+    <h2>Contact Us</h2>
+    <p>If you have any questions or need support, please contact us at:</p>
+    <p>📧 <strong>thegoodbookforever@gmail.com</strong><br>📞 <strong>+1 608 931 6605</strong></p>
 </div>
 
-<script>
-    // Generate sparkles
-    const sparklesContainer = document.querySelector('.sparkles');
-    for(let i = 0; i < 30; i++) {
-        const sparkle = document.createElement('span');
-        sparkle.style.width = sparkle.style.height = Math.random() * 5 + 2 + 'px';
-        sparkle.style.left = Math.random() * window.innerWidth + 'px';
-        sparkle.style.top = Math.random() * window.innerHeight + 'px';
-        sparkle.style.animationDuration = Math.random() * 3 + 2 + 's';
-        sparkle.style.background = `hsl(${Math.random() * 360}, 100%, 80%)`;
-        sparklesContainer.appendChild(sparkle);
-    }
-</script>
+<footer>
+    &copy; 2025 Jestin Korleski. All Rights Reserved.
+</footer>
 
 </body>
 </html>
