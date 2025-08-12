@@ -1,121 +1,157 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Privacy Policy - Fantasy Car Style</title>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Privacy Policy - Fantasy Style</title>
 
-<!-- Google Fonts -->
-<link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Great+Vibes&display=swap" rel="stylesheet">
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Great+Vibes&family=EB+Garamond:400,600&display=swap" rel="stylesheet">
 
 <style>
-    body {
-        margin: 0;
-        padding: 0;
-        font-family: 'Marcellus', serif;
-        color: #fff;
-        background: url('https://images.unsplash.com/photo-1517949908119-5f2d3c1f1d51') no-repeat center center/cover;
-        background-attachment: fixed;
-        overflow-x: hidden;
-    }
+  :root{
+    --panel-width: 900px;
+    --accent: #ffd966;
+    --text: #f4eede;
+    --muted: rgba(244,238,222,0.85);
+  }
 
-    /* Overlay for readability */
-    .overlay {
-        background: rgba(0, 0, 0, 0.65);
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        z-index: -1;
-    }
+  /* page bg: sharp fantasy image */
+  html,body{height:100%; margin:0;}
+  body{
+    font-family: "EB Garamond", "Marcellus", serif;
+    color: var(--text);
+    background: url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1920&q=90') center/cover fixed no-repeat;
+    -webkit-font-smoothing:antialiased;
+    -moz-osx-font-smoothing:grayscale;
+    overflow-x:hidden;
+  }
 
-    header {
-        text-align: center;
-        padding: 40px 20px 10px;
-    }
+  /* slight dreamy blur only on overlay, not on the image itself */
+  .bg-overlay{
+    position:fixed;
+    inset:0;
+    background: linear-gradient(180deg, rgba(2,6,23,0.35), rgba(3,10,40,0.45));
+    backdrop-filter: blur(1px);
+    z-index:0;
+  }
 
-    header h1 {
-        font-family: 'Great Vibes', cursive;
-        font-size: 3.2rem;
-        color: #ffd700;
-        text-shadow: 0 0 15px #ffdd88, 0 0 30px #ffaa00;
-        animation: glow 2s ease-in-out infinite alternate;
-    }
+  /* sparkles */
+  .sparkles{
+    position:fixed;
+    inset:0;
+    pointer-events:none;
+    z-index:1;
+    overflow:hidden;
+  }
+  .sparkles i{
+    position:absolute;
+    width:6px; height:6px;
+    border-radius:50%;
+    opacity:0;
+    box-shadow:0 0 8px rgba(255,214,102,0.9);
+    animation:rise var(--dur,8s) linear infinite;
+  }
+  @keyframes rise{
+    0%{ transform: translateY(20vh) scale(0.4); opacity:0;}
+    10%{ opacity:1;}
+    80%{ opacity:1;}
+    100%{ transform: translateY(-120vh) scale(1.1); opacity:0;}
+  }
 
-    header p {
-        color: #ddd;
-        font-size: 1rem;
-        text-shadow: 0 0 5px rgba(0,0,0,0.5);
-    }
+  /* main panel */
+  .panel {
+    position:relative;
+    max-width:var(--panel-width);
+    margin:48px auto;
+    background: linear-gradient(180deg, rgba(9,8,6,0.72), rgba(6,5,4,0.62));
+    border-radius:14px;
+    padding:34px 36px;
+    z-index:2;
+    box-shadow: 0 12px 40px rgba(0,0,0,0.6), 0 0 30px rgba(255,214,102,0.06) inset;
+    border:1px solid rgba(255,214,102,0.08);
+    backdrop-filter: none;
+  }
 
-    @keyframes glow {
-        from { text-shadow: 0 0 15px #ffdd88, 0 0 25px #ffaa00; }
-        to { text-shadow: 0 0 25px #ffaa00, 0 0 40px #ff6600; }
-    }
+  header h1{
+    font-family: 'Great Vibes', cursive;
+    color: var(--accent);
+    font-size:44px;
+    margin:4px 0 2px;
+    text-align:center;
+    text-shadow: 0 0 12px rgba(255,214,102,0.25);
+    letter-spacing:0.6px;
+  }
 
-    .container {
-        max-width: 900px;
-        margin: 20px auto;
-        padding: 25px;
-        background: rgba(0, 0, 0, 0.7);
-        border-radius: 15px;
-        border: 1px solid rgba(255, 215, 0, 0.3);
-        box-shadow: 0 0 25px rgba(255, 215, 0, 0.2);
-        animation: fadeIn 1.5s ease-in-out;
-    }
+  header p.meta{
+    text-align:center;
+    margin:6px 0 18px;
+    color:var(--muted);
+    font-size:0.97rem;
+  }
 
-    @keyframes fadeIn {
-        from { opacity: 0; transform: translateY(20px); }
-        to { opacity: 1; transform: translateY(0); }
-    }
+  .container h2{
+    color:var(--accent);
+    margin-top:22px;
+    font-size:1.45rem;
+    letter-spacing:0.2px;
+    border-bottom:1px solid rgba(255,214,102,0.08);
+    padding-bottom:8px;
+  }
 
-    h2 {
-        color: #ffd700;
-        text-shadow: 0 0 8px #ffdd88;
-        border-bottom: 1px solid rgba(255, 215, 0, 0.4);
-        padding-bottom: 5px;
-        margin-top: 25px;
-    }
+  .container p, .container li {
+    color:var(--muted);
+    font-size:1.03rem;
+    line-height:1.7;
+  }
 
-    p, li {
-        line-height: 1.6;
-        font-size: 1.05rem;
-    }
+  .container ul{ margin-left:20px; }
 
-    ul {
-        margin-left: 20px;
-    }
+  blockquote{
+    margin:16px 0;
+    padding:10px 16px;
+    border-left:4px solid rgba(255,214,102,0.16);
+    background: linear-gradient(90deg, rgba(255,255,255,0.01), rgba(255,214,102,0.01));
+    color: #fbeec8;
+    font-style:italic;
+  }
 
-    blockquote {
-        font-style: italic;
-        border-left: 4px solid #ffd700;
-        padding-left: 15px;
-        color: #ffdd88;
-        margin: 15px 0;
-        background: rgba(255, 255, 255, 0.05);
-    }
+  footer{
+    text-align:center;
+    color:rgba(244,238,222,0.8);
+    margin-top:18px;
+    font-size:0.92rem;
+    border-top:1px solid rgba(255,214,102,0.04);
+    padding-top:14px;
+  }
 
-    footer {
-        text-align: center;
-        padding: 15px;
-        font-size: 0.85rem;
-        color: #ffdd88;
-        margin-top: 20px;
-        border-top: 1px solid rgba(255, 215, 0, 0.2);
-    }
+  /* responsive */
+  @media (max-width:980px){
+    .panel{ margin:28px 18px; padding:24px; }
+    header h1{ font-size:36px; }
+  }
+  @media (max-width:520px){
+    header h1{ font-size:30px; }
+    .container p, .container li { font-size:1rem; }
+  }
 </style>
 </head>
 <body>
 
-<div class="overlay"></div>
+<!-- sharp fantasy background with slight overlay blur for dreaminess -->
+<div class="bg-overlay" aria-hidden="true"></div>
 
-<header>
-    <h1>Privacy Policy</h1>
-    <p><strong>Author:</strong> Jestin Korleski | <strong>Support Email:</strong> thegoodbookforever@gmail.com | <strong>Mobile:</strong> +1 608 931 6605</p>
-</header>
+<!-- decorative sparkles (JS will position several) -->
+<div class="sparkles" aria-hidden="true"></div>
 
-<div class="container">
+<!-- keep your panel and text EXACTLY as you wrote them -->
+<section class="panel" role="main" aria-labelledby="policy-title">
+  <header>
+    <h1 id="policy-title">Privacy Policy</h1>
+    <p class="meta"><strong>Author:</strong> Jestin Korleski &nbsp; | &nbsp; <strong>Support Email:</strong> thegoodbookforever@gmail.com &nbsp; | &nbsp; <strong>Mobile:</strong> +1 608 931 6605</p>
+  </header>
+
+  <div class="container">
     <h2>Introduction</h2>
     <p>This page is used to inform visitors regarding our policies with the collection, use, and disclosure of Personal Information if anyone decides to use our Service.</p>
     <p>By using our Service, you agree to the collection and use of information in accordance with this policy. The Personal Information we collect is used for providing and improving the Service. We do not use or share your information with anyone except as described in this Privacy Policy.</p>
@@ -127,21 +163,21 @@
     <h2>Log Data</h2>
     <p>In case of an error in the app, we collect data and information (through third-party products) on your phone called <strong>Log Data</strong>. This Log Data may include:</p>
     <ul>
-        <li>Your device's Internet Protocol (“IP”) address</li>
-        <li>Device name</li>
-        <li>Operating system version</li>
-        <li>Configuration of the app</li>
-        <li>Time and date of your use of the Service</li>
-        <li>Other statistics</li>
+      <li>Your device's Internet Protocol (“IP”) address</li>
+      <li>Device name</li>
+      <li>Operating system version</li>
+      <li>Configuration of the app</li>
+      <li>Time and date of your use of the Service</li>
+      <li>Other statistics</li>
     </ul>
 
     <h2>Your Rights and Choices</h2>
     <p>You have certain rights in relation to your personal data:</p>
     <ul>
-        <li><strong>The right to erasure</strong></li>
-        <li><strong>The right to restrict processing</strong></li>
-        <li><strong>The right to object to processing</strong></li>
-        <li><strong>The right to data portability</strong></li>
+      <li><strong>The right to erasure</strong></li>
+      <li><strong>The right to restrict processing</strong></li>
+      <li><strong>The right to object to processing</strong></li>
+      <li><strong>The right to data portability</strong></li>
     </ul>
     <blockquote>Please note: The law provides exceptions to these rights in certain cases. If you cannot exercise one of these rights, we will explain why.</blockquote>
 
@@ -162,11 +198,34 @@
     <h2>Contact Us</h2>
     <p>If you have any questions or need support, please contact us at:</p>
     <p>📧 <strong>thegoodbookforever@gmail.com</strong><br>📞 <strong>+1 608 931 6605</strong></p>
-</div>
+  </div>
 
-<footer>
-    &copy; 2025 Jestin Korleski. All Rights Reserved.
-</footer>
+  <footer>&copy; 2025 Jestin Korleski. All Rights Reserved.</footer>
+</section>
+
+<!-- small script to add some colorful sparkles behind the panel -->
+<script>
+  (function createSparkles(){
+    const container = document.querySelector('.sparkles');
+    const colors = ['#ffd966','#ff9f9f','#b5e7ff','#c7f3a6'];
+    const count = 22;
+    const vw = Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0);
+    const vh = Math.max(document.documentElement.clientHeight || 0, window.innerHeight || 0);
+    for(let i=0;i<count;i++){
+      const el = document.createElement('i');
+      const size = (Math.random()*6)+3; // 3-9px
+      el.style.width = el.style.height = size + 'px';
+      el.style.left = Math.random()*vw + 'px';
+      el.style.top = Math.random()*vh + 'px';
+      el.style.background = colors[Math.floor(Math.random()*colors.length)];
+      el.style.opacity = 0.85 * Math.random();
+      el.style.setProperty('--dur', (6 + Math.random()*8) + 's');
+      el.style.transform = `translateY(0) scale(${0.6 + Math.random()*0.9})`;
+      el.style.filter = 'blur(0.3px)';
+      container.appendChild(el);
+    }
+  })();
+</script>
 
 </body>
 </html>
